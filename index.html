@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила чата</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #121212; color: #e0e0e0; padding: 10px; margin: 0; }
+        .container { max-width: 700px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 12px; }
+        h1 { text-align: center; color: #ffffff; font-size: 1.5rem; }
+        #searchBar { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #444; background: #2a2a2a; color: white; box-sizing: border-box; }
+        details { background: #2a2a2a; margin-bottom: 10px; padding: 10px; border-radius: 8px; border-left: 5px solid #3498db; }
+        summary { font-weight: bold; cursor: pointer; outline: none; padding: 5px; }
+        .searching summary { pointer-events: none; }
+        .rule-item { margin-top: 10px; padding-bottom: 10px; border-bottom: 1px solid #333; font-size: 0.95rem; }
+        .punishment-list { margin-top: 5px; padding-left: 20px; font-size: 0.85em; color: #ff6b6b; }
+        .important { background: #3c2a2a; border: 1px solid #ff6b6b; padding: 15px; border-radius: 8px; margin-top: 20px; font-size: 0.9em; }
+        @media (max-width: 480px) {
+            body { padding: 5px; }
+            .container { padding: 15px; }
+            h1 { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Правила чата</h1>
+    <input type="text" id="searchBar" placeholder="Поиск по правилам..." onkeyup="searchRules()">
+
+    <div id="rulesContent">
+        <details>
+            <summary>1. ОБЩИЕ ПРАВИЛА</summary>
+            <div class="rule-item">1.1. Неуважение к владельцу и администрации
+                <ul class="punishment-list">
+                    <li>1 нарушение: Предупреждение</li>
+                    <li>2 нарушение: Мут 6 часов</li>
+                    <li>3 нарушение: Мут 12 часов</li>
+                </ul>
+            </div>
+            <div class="rule-item">1.2. Игнорирование требований модераторов
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 2 часа</li>
+                    <li>2 нарушение: Мут 6 часов</li>
+                    <li>3 нарушение: Мут 12 часов</li>
+                </ul>
+            </div>
+            <div class="rule-item">1.3. Разжигание конфликта из-за действий администрации
+                <ul class="punishment-list">
+                    <li>1 нарушение: Предупреждение</li>
+                    <li>2 нарушение: Мут 3 часа</li>
+                    <li>3 нарушение: Мут 6 часов</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>2. ОБЩЕНИЕ И ВЗАИМОДЕЙСТВИЕ</summary>
+            <div class="rule-item">2.1. Нешуточные оскорбления, оскорбление родителей
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 4 часа</li>
+                    <li>2 нарушение: Бан 24 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">2.2. Унизительные высказывания
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 3 часа</li>
+                    <li>2 нарушение: Мут 8 часов</li>
+                    <li>3 нарушение: Мут 24 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">2.3. Распространение ложной информации о пользователях
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 6 часов</li>
+                    <li>2 нарушение: Мут 24 часа</li>
+                    <li>3 нарушение: Перманентный бан</li>
+                </ul>
+            </div>
+            <div class="rule-item">2.4. Угрозы в любой форме
+                <ul class="punishment-list">
+                    <li>Наказание: Бан 48 часов</li>
+                </ul>
+            </div>
+            <div class="rule-item">2.5. Дискриминационные высказывания
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 12 часов</li>
+                    <li>2 нарушение: Бан 72 часа</li>
+                    <li>3 нарушение: Перманентный бан</li>
+                </ul>
+            </div>
+            <div class="rule-item">2.6. Обсуждение личной жизни без согласия
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 4 часа</li>
+                    <li>2 нарушение: Мут 12 часов</li>
+                    <li>3 нарушение: Мут 24 часа</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>3. КОНТЕНТ</summary>
+            <div class="rule-item">3.1. Порнографические материалы
+                <ul class="punishment-list"><li>Наказание: Перманентный бан</li></ul>
+            </div>
+            <div class="rule-item">3.2. Эротический контент 18+
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 12 часов</li>
+                    <li>2 нарушение: Бан 48 часов</li>
+                    <li>3 нарушение: Перманентный бан</li>
+                </ul>
+            </div>
+            <div class="rule-item">3.3. Грубая нецензурная лексика
+                <ul class="punishment-list">
+                    <li>1 нарушение: Предупреждение</li>
+                    <li>2 нарушение: Мут 1 час</li>
+                    <li>3 нарушение: Мут 3 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">3.4. Намёки интимного характера
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 3 часа</li>
+                    <li>2 нарушение: Мут 8 часов</li>
+                    <li>3 нарушение: Мут 24 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">3.5. Жестокий или шокирующий контент
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 8 часов</li>
+                    <li>2 нарушение: Бан 24 часа</li>
+                    <li>3 нарушение: Перманентный бан</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>4. РЕКЛАМА И РАССЫЛКИ</summary>
+            <div class="rule-item">4.1. Реклама сторонних проектов
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 4 часа</li>
+                    <li>2 нарушение: Мут 12 часов</li>
+                    <li>3 нарушение: Бан 24 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">4.2. Реклама мошеннических схем
+                <ul class="punishment-list"><li>Наказание: Перманентный бан</li></ul>
+            </div>
+            <div class="rule-item">4.3. Массовые рассылки и спам
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 2 часа</li>
+                    <li>2 нарушение: Мут 6 часов</li>
+                    <li>3 нарушение: Мут 12 часов</li>
+                </ul>
+            </div>
+            <div class="rule-item">4.4. Частый повтор одинаковых сообщений
+                <ul class="punishment-list">
+                    <li>1 нарушение: Предупреждение</li>
+                    <li>2 нарушение: Мут 1 час</li>
+                    <li>3 нарушение: Мут 3 часа</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>5. БЕЗОПАСНОСТЬ</summary>
+            <div class="rule-item">5.1. Передача чужих личных данных
+                <ul class="punishment-list"><li>Наказание: Перманентный бан</li></ul>
+            </div>
+            <div class="rule-item">5.2. Фишинг и попытки взлома
+                <ul class="punishment-list"><li>Наказание: Перманентный бан</li></ul>
+            </div>
+            <div class="rule-item">5.3. Ссылки на опасные ресурсы
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 4 часа</li>
+                    <li>2 нарушение: Мут 12 часов</li>
+                    <li>3 нарушение: Бан 24 часа</li>
+                </ul>
+            </div>
+            <div class="rule-item">5.4. Призывы к нарушению закона
+                <ul class="punishment-list"><li>Наказание: Бан 72 часа</li></ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>6. АВТОРСКИЕ ПРАВА</summary>
+            <div class="rule-item">6.1. Публикация пиратских материалов
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 6 часов</li>
+                    <li>2 нарушение: Мут 24 часа</li>
+                    <li>3 нарушение: Бан 48 часов</li>
+                </ul>
+            </div>
+            <div class="rule-item">6.2. Присвоение чужого контента
+                <ul class="punishment-list">
+                    <li>1 нарушение: Мут 4 часа</li>
+                    <li>2 нарушение: Мут 12 часов</li>
+                    <li>3 нарушение: Бан 24 часа</li>
+                </ul>
+            </div>
+        </details>
+
+        <details>
+            <summary>7. ДОПОЛНИТЕЛЬНО</summary>
+            <div class="rule-item">7.1. Использование доп. аккаунтов после блокировки
+                <ul class="punishment-list"><li>Наказание: Перманентный бан всех аккаунтов</li></ul>
+            </div>
+            <div class="rule-item">7.2. Создание фейковых аккаунтов
+                <ul class="punishment-list"><li>Наказание: Перманентный бан</li></ul>
+            </div>
+            <div class="rule-item">7.3. Содействие в нарушении правил другим пользователем
+                <ul class="punishment-list"><li>Наказание: Половина наказания того пункта, к которому относится</li></ul>
+            </div>
+            <div class="rule-item">7.4. Намёк, близкий к нарушению правил
+                <ul class="punishment-list"><li>Наказание: Половина наказания, предусмотренного за соответствующее нарушение</li></ul>
+            </div>
+        </details>
+    </div>
+
+    <div class="important">
+        <strong>ВАЖНО:</strong> Три предупреждения равны бану. Администрация может смягчить меры при уважительных причинах. Если администратор не в сети и вы стали свидетелем нарушения — отметьте его через @упоминание.
+    </div>
+</div>
+
+<script>
+    function searchRules() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let details = document.getElementsByTagName('details');
+        let items = document.getElementsByClassName('rule-item');
+        let container = document.getElementById('rulesContent');
+
+        if (input.length > 0) {
+            container.classList.add('searching');
+            for (let d of details) { d.open = true; }
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                items[i].style.display = text.includes(input) ? "" : "none";
+            }
+        } else {
+            container.classList.remove('searching');
+            for (let d of details) { d.open = false; }
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.display = "";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
